@@ -43,7 +43,7 @@ int partition(int array[], int lowIndex, int highIndex){
   array[lowIndex]=array[pivotIndex - 1];
   array[pivotIndex - 1]=pivot;
 	print_array(array,10);
-  printf("Pivot: %d\n", pivotIndex);
+  printf("Pivot: %d\n", pivotIndex-1);
   return pivotIndex-1;
 }
 
@@ -58,6 +58,7 @@ int partition(int array[], int lowIndex, int highIndex){
 
 void quicksort(int array[], int lowIndex, int highIndex){
 
+  printf("lowIndex: %d\thighIndex: %d\n",lowIndex,highIndex);
   if(lowIndex<highIndex){
     int pivot = partition(array,lowIndex,highIndex);
     quicksort(array,lowIndex,pivot);
@@ -68,7 +69,8 @@ void quicksort(int array[], int lowIndex, int highIndex){
 
 int main(void){
 
-  int array[] ={9,7,4,1,8,2,5,3,6,0};
+  int array[] ={5,3,9,1,8,6,2,0,4,7};
+  //int array[] ={9,7,4,1,8,2,5,3,6,0};
   quicksort(array,0,10);
 	print_array(array,10);
 
